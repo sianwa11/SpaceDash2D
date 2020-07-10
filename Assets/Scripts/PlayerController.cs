@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -33,6 +31,12 @@ public class PlayerController : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpVelocity;
             grounded = false;
+        }
+
+        // Game Over if player goes lower than platforms
+        if(rb.position.y < 1)
+        {
+            FindObjectOfType<GameManager>().TransitionToEnd();
         }
     }
 }

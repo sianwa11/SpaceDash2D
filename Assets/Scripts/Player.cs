@@ -13,6 +13,14 @@ public class Player : MonoBehaviour
         healthBar.setMaxHealth(maxHealth); // set maxHealth to 100
     }
 
+    void Update()
+    {
+        // end game if health is 0
+        if(currentHealth <= 0)
+        {
+            FindObjectOfType<GameManager>().TransitionToEnd();
+        }
+    }
     // Collission detection
     private void OnCollisionEnter2D(Collision2D enemy)
     {
