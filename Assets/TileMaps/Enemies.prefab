@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8614000966530201085}
   - component: {fileID: 6882316390296541981}
   m_Layer: 31
-  m_Name: Ground Platform
+  m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,6 +117,24 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 24
       m_TileSpriteIndex: 24
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: 6, y: -9, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 27
+      m_TileSpriteIndex: 27
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: 8, y: -7, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 28
+      m_TileSpriteIndex: 28
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -384,6 +402,10 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: f9e8bb06021a5cc4f8f42bf4fc029a15, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 239d193c4a55fa24391721875edd518a, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 3f8d7de0fd4fe854d97407c9791077dd, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 5b37574531051084d9b07b614aabd55e, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: e163d577fcee4fa4398de6ae37f554d2, type: 3}
@@ -439,8 +461,12 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 95b34bf8a34aa3543949566316d48302, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: c7879d290f7325a418ae4d1f02aa1311, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 68a3834f2b1dd354787570e78cf15747, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: c7751e43ec9b50745985372bf2b0177b, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 27
+  - m_RefCount: 29
     m_Data:
       e00: 1
       e01: 0
@@ -459,7 +485,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 27
+  - m_RefCount: 29
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1

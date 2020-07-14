@@ -6,8 +6,8 @@ public class JumpForce : MonoBehaviour
 {
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
-
     public Rigidbody2D rb;
+    
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
