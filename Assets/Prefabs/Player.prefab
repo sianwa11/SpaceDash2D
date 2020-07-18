@@ -146,9 +146,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpVelocity: 10
+  forwardMovement: 7
   jumpKey: 32
   grounded: 0
   rb: {fileID: 0}
+  trail: {fileID: 0}
+  dust: {fileID: 0}
 --- !u!114 &9024020895623734444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +167,8 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 0}
+  rb: {fileID: 0}
+  FLoatingTextPrefab: {fileID: 0}
 --- !u!114 &9024020895623734445
 MonoBehaviour:
   m_ObjectHideFlags: 0

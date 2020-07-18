@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class Player : MonoBehaviour
     public int currentHealth;
 
     public HealthBar healthBar;
+    public ParticleSystem explosion;
 
     void Start()
     {
@@ -16,7 +18,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         // end game if health is 0
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             FindObjectOfType<GameManager>().TransitionToEnd();
         }
@@ -27,13 +29,11 @@ public class Player : MonoBehaviour
         if(enemy.gameObject.tag == "Enemy")
         {
             Debug.Log("HIT Enemy");
-
             // play death sound and reduce life
             takeDamage(20);
 
-            // restart level if life is not exhausted
-
-            // Game over if lives are exhausted
+            // play particle system
+            CreateExplosion();
         }
     }
 
@@ -41,5 +41,10 @@ public class Player : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.setHealth(currentHealth);
+    }
+
+    void CreateExplosion()
+    {
+        explosion.Play();
     }
 }
