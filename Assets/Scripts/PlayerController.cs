@@ -16,13 +16,14 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.GetComponent<RocketMovement>().enabled = false;
         trail = GetComponent<TrailRenderer>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // to prevent double jumps
-        if (collision.gameObject.tag == "Foreground")
+        if (collision.gameObject.tag == "Foreground" || collision.gameObject.tag == "Enemy")
         {
             grounded = true;
             trail.enabled = false;
