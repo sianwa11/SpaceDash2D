@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\RocketMovement.cs" />
+    <Compile Include="Assets\Scripts\StartBall.cs" />
     <Compile Include="Assets\Scripts\StartRocket.cs" />
     <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />
     <Reference Include="UnityEngine">

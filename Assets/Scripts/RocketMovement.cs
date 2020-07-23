@@ -8,14 +8,17 @@ public class RocketMovement : MonoBehaviour
     public float upForce = 200f;
     public float forwardForce = 7f;
 
+
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); 
+        rb = GetComponent<Rigidbody2D>();
     }
+   
 
     void Update()
     {
         rb.velocity = new Vector2(forwardForce, rb.velocity.y);
+        rb.freezeRotation = true; // freeze rotation of rocket on z axis
 
         if (Input.GetKeyDown(KeyCode.Space))
         {

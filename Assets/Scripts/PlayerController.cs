@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         // later on fix this forward movement
         rb.velocity = new Vector2(forwardMovement, rb.velocity.y);
+        rb.freezeRotation = false;
 
         if (Input.GetKeyDown(jumpKey) && grounded)
         {
