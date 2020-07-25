@@ -10,14 +10,14 @@ public class PlayerController : MonoBehaviour
 
     // reference variables
     public Rigidbody2D rb;
-    public TrailRenderer trail;
-    public ParticleSystem dust;
+   // public TrailRenderer trail;
+   // public ParticleSystem dust;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.GetComponent<RocketMovement>().enabled = false;
-        trail = GetComponent<TrailRenderer>();
+      //  trail = GetComponent<TrailRenderer>();
+       // rb.GetComponent<RocketMovement>().enabled = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -26,8 +26,8 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Foreground" || collision.gameObject.tag == "Enemy")
         {
             grounded = true;
-            trail.enabled = false;
-            createDust(); // play particle when player lands
+           // trail.enabled = false;
+           // createDust(); // play particle when player lands
         }
     }
 
@@ -35,11 +35,11 @@ public class PlayerController : MonoBehaviour
     {
         // later on fix this forward movement
         rb.velocity = new Vector2(forwardMovement, rb.velocity.y);
-        rb.freezeRotation = false;
+        rb.freezeRotation = false; // enable rotation on the z axis
 
         if (Input.GetKeyDown(jumpKey) && grounded)
         {
-            trail.enabled = true;
+          //  trail.enabled = true;
             GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpVelocity;
             grounded = false;
         }
@@ -53,6 +53,6 @@ public class PlayerController : MonoBehaviour
 
     public void createDust()
     {
-        dust.Play();
+      //  dust.Play();
     }
 }
