@@ -5,6 +5,8 @@ using UnityEngine;
 public class RocketMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private TrailRenderer trail;
+
     public float upForce = 200f;
     public float forwardForce = 7f;
 
@@ -12,6 +14,7 @@ public class RocketMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        trail = GetComponent<TrailRenderer>();
     }
    
 
@@ -19,6 +22,8 @@ public class RocketMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(forwardForce, rb.velocity.y);
         rb.freezeRotation = true; // freeze rotation of rocket on z axis
+
+        trail.enabled = true;
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
