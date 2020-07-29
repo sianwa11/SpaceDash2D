@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Foreground
+  - Gem
+  - Cherry
+  - LevelComplete
   layers:
   - Default
   - TransparentFX

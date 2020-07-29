@@ -7,6 +7,7 @@ public class EndGame : MonoBehaviour
     {
         // transition to game over
         // find a better way to do this later
-        SceneManager.LoadScene("GameOver");
+       // SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

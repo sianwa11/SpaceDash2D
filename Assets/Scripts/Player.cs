@@ -8,11 +8,16 @@ public class Player : MonoBehaviour
 
     public HealthBar healthBar;
     public ParticleSystem explosion;
+    public LevelLoader levelLoader;
+
+    private PlayerController player;
 
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.setMaxHealth(maxHealth); // set maxHealth to 100
+
+        player = GetComponent<PlayerController>(); // get a reference to the player controller
     }
 
     void Update()
@@ -24,7 +29,7 @@ public class Player : MonoBehaviour
         }
     }
     // Collission detection
-    private void OnCollisionEnter2D(Collision2D enemy)
+    void OnCollisionEnter2D(Collision2D enemy)
     {
         if(enemy.gameObject.tag == "Enemy")
         {
@@ -37,6 +42,25 @@ public class Player : MonoBehaviour
         }
     }
 
+    // trigger code
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Cherry")
+        {
+            Destroy(other.gameObject);
+            increaseLife(10);
+        }
+
+        if(other.gameObject.tag == "LevelComplete")
+        {
+            Debug.Log("Level Complete");
+            player.enabled = false; // disable movement of player
+
+            // animation to next scene
+            levelLoader.LoadNextLevel();
+        }
+    }
+
     void takeDamage(int damage)
     {
         currentHealth -= damage;
@@ -46,5 +70,14 @@ public class Player : MonoBehaviour
     void CreateExplosion()
     {
         explosion.Play();
+    }
+
+    void increaseLife(int life)
+    {
+        if (currentHealth < 100)
+        {
+            currentHealth += life;
+            healthBar.setHealth(currentHealth);
+        }
     }
 }
