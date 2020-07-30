@@ -3,23 +3,14 @@ using UnityEngine.UI;
 
 public class ScoringSystem : MonoBehaviour
 {
-    private int totalGems;
-
     public int gems;
     public Text gemText;
+    public Text gemsCollected;
 
     void Start()
     {
-        gems = 0;
-        totalGems = PlayerPrefs.GetInt("TotalGems", totalGems);
-    }
-    void Update()
-    {
-        if (gems > totalGems)
-        {
-            totalGems = gems;
-            PlayerPrefs.SetInt("TotalGems", totalGems);
-        }
+        // Change this later
+        gemsCollected.text = "Total Gems Collected: " + PlayerPrefs.GetInt("Gems", 0).ToString();   
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -27,7 +18,10 @@ public class ScoringSystem : MonoBehaviour
         if (other.gameObject.tag == "Gem")
         {
             Destroy(other.gameObject);
+            // collect gem
             AddGem();
+            // play sound
+            FindObjectOfType<AudioManager>().Play("GemCollected");
         }
     }
 
@@ -35,12 +29,13 @@ public class ScoringSystem : MonoBehaviour
     {
         gems++;
         gemText.text = gems.ToString();
-    }
 
-    // come back and review this!!!!!
-    public int GetGems()
-    {
-        int total = PlayerPrefs.GetInt("TotalGems", totalGems);
-        return total;
+        // save the number of gems
+        if (gems > 0)
+        {
+            PlayerPrefs.SetInt("Gems", gems);
+            // congratulate player
+        }
+        
     }
 }

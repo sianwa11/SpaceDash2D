@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-
 public class Player : MonoBehaviour
 {
     public int maxHealth = 100;
@@ -22,18 +20,23 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        
         // end game if health is 0
         if (currentHealth <= 0)
         {
             FindObjectOfType<GameManager>().TransitionToEnd();
         }
+
+
     }
     // Collission detection
     void OnCollisionEnter2D(Collision2D enemy)
     {
-        if(enemy.gameObject.tag == "Enemy")
+        if (enemy.gameObject.tag == "Enemy")
         {
             Debug.Log("HIT Enemy");
+            //play collision sound
+            FindObjectOfType<AudioManager>().Play("PlayerHit");
             // play death sound and reduce life
             takeDamage(20);
 
@@ -48,6 +51,8 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Cherry")
         {
             Destroy(other.gameObject);
+            //play life sound
+            FindObjectOfType<AudioManager>().Play("Life");
             increaseLife(10);
         }
 

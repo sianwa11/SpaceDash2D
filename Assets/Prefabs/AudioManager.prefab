@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2075102821722786853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2075102821722786851}
+  - component: {fileID: 2075102821722786850}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2075102821722786851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075102821722786853}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2075102821722786850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075102821722786853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd41745c434c7e4796cbf9a027e0773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: PlayerHit
+    loop: 0
+    clip: {fileID: 8300000, guid: 50c2fd4d8dfb924448a03b538b48717e, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    pitch: 1
+  - name: GemCollected
+    loop: 0
+    clip: {fileID: 8300000, guid: f4216ed409740bc4e99c5372df2a2f23, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    pitch: 1
+  - name: Theme
+    loop: 1
+    clip: {fileID: 0}
+    source: {fileID: 0}
+    volume: 1
+    pitch: 1
+  - name: Life
+    loop: 0
+    clip: {fileID: 8300000, guid: 94e58d08e04b074459fdaf1630be7743, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    pitch: 1
