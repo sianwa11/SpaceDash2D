@@ -9,6 +9,8 @@ TagManager:
   - Gem
   - Cherry
   - LevelComplete
+  - RocketTrigger
+  - BallTrigger
   layers:
   - Default
   - TransparentFX
